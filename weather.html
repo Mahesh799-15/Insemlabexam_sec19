@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="sunny">
+
+  <div class="app">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">⛅</div>
+      <div>
+        <h1>Weather Dashboard</h1>
+        <p>Check the weather in any city</p>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-row">
+      <div class="field">
+        <label for="cityInput">City name</label>
+        <input type="text" id="cityInput" placeholder="e.g. London" onkeydown="if (event.key === 'Enter') getWeather()">
+      </div>
+      <button class="search-btn" type="button" onclick="getWeather()">
+        <span>🔍</span>
+        Search
+      </button>
+    </div>
+
+    <!-- Messages -->
+    <p id="loading" class="message hidden">Loading weather...</p>
+    <p id="error" class="message error hidden"></p>
+
+    <!-- Weather report -->
+    <div id="result" class="card hidden">
+      <p class="card-label" id="cityName"></p>
+
+      <div class="main">
+        <div class="big-icon" id="weatherIcon"></div>
+        <div>
+          <div class="temp" id="temperature"></div>
+          <div class="desc" id="weather"></div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="box">
+          <div class="box-label">💧 Humidity</div>
+          <div class="box-value" id="humidity"></div>
+        </div>
+        <div class="box">
+          <div class="box-label">🌡️ Feels like</div>
+          <div class="box-value" id="feelsLike"></div>
+        </div>
+        <div class="box">
+          <div class="box-label">💨 Wind</div>
+          <div class="box-value" id="wind"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
